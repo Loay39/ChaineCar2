@@ -33,7 +33,6 @@ class CalculateurTest {
 	@Test
 	void test4() {
 		assertEquals(calc.ajoute("1,2,3"), "6");
-		assertEquals(calc.ajoute("-1,-2,-3"), "-6");
 	}
 
 	@Test
@@ -43,4 +42,16 @@ class CalculateurTest {
 		assertEquals(calc.ajoute("1000"), "0");
 	}
 
+	@Test
+	void test6() {
+		assertEquals(calc.ajoute("1,2, 3"), "6");
+		assertEquals(calc.ajoute(" "), "0");
+	}
+
+	@Test
+	void test7() {
+		assertEquals(calc.ajoute("-666"), "erreur");
+		assertEquals(calc.ajoute("7,-5"), "erreur");
+		assertEquals(calc.ajoute("-1,-2,-3"), "erreur");
+	}
 }
