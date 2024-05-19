@@ -24,4 +24,9 @@ class CalculateurTest {
 		assertEquals(calc.ajoute(""), "0");
 	}
 
+	@Test
+	void test3() {
+		assertEquals(calc.ajoute("1,2"), "3");
+	}
+
 }
