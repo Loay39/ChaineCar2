@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>CalculateurTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">CalculateurTest (1) (May 19, 2024 5:19:19 AM)</a> &gt; <a href="../../index.html" class="el_group">ChaineCar2</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">ilu2</a> &gt; <span class="el_source">CalculateurTest.java</span></div><h1>CalculateurTest.java</h1><pre class="source lang-java linenums">package ilu2;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+<span class="fc" id="L8">class CalculateurTest {</span>
+	Calculateur calc;
+
+	@BeforeEach
+	void setUp() throws Exception {
+<span class="fc" id="L13">		calc = new Calculateur();</span>
+<span class="fc" id="L14">	}</span>
+
+	@Test
+	void test1() {
+<span class="fc" id="L18">		assertEquals(calc.ajoute(&quot;42&quot;), &quot;42&quot;);</span>
+<span class="fc" id="L19">	}</span>
+
+	@Test
+	void test2() {
+<span class="fc" id="L23">		assertEquals(calc.ajoute(&quot;&quot;), &quot;0&quot;);</span>
+<span class="fc" id="L24">	}</span>
+
+	@Test
+	void test3() {
+<span class="fc" id="L28">		assertEquals(calc.ajoute(&quot;1,2&quot;), &quot;3&quot;);</span>
+<span class="fc" id="L29">	}</span>
+
+	@Test
+	void test4() {
+<span class="fc" id="L33">		assertEquals(calc.ajoute(&quot;1,2,3&quot;), &quot;6&quot;);</span>
+<span class="fc" id="L34">	}</span>
+
+	@Test
+	void test5() {
+<span class="fc" id="L38">		assertEquals(calc.ajoute(&quot;1,1000,2000,2&quot;), &quot;3&quot;);</span>
+<span class="fc" id="L39">		assertEquals(calc.ajoute(&quot;1000,1,2000&quot;), &quot;1&quot;);</span>
+<span class="fc" id="L40">		assertEquals(calc.ajoute(&quot;1000&quot;), &quot;0&quot;);</span>
+<span class="fc" id="L41">	}</span>
+
+	@Test
+	void test6() {
+<span class="fc" id="L45">		assertEquals(calc.ajoute(&quot;1,2, 3&quot;), &quot;6&quot;);</span>
+<span class="fc" id="L46">		assertEquals(calc.ajoute(&quot; &quot;), &quot;0&quot;);</span>
+<span class="fc" id="L47">	}</span>
+
+	@Test
+	void test7() {
+<span class="fc" id="L51">		assertEquals(calc.ajoute(&quot;-666&quot;), &quot;erreur&quot;);</span>
+<span class="fc" id="L52">		assertEquals(calc.ajoute(&quot;7,-5&quot;), &quot;erreur&quot;);</span>
+<span class="fc" id="L53">		assertEquals(calc.ajoute(&quot;-1,-2,-3&quot;), &quot;erreur&quot;);</span>
+<span class="fc" id="L54">	}</span>
+
+	@Test
+	void test8() {
+<span class="nc" id="L58">		assertEquals(calc.ajoute(&quot;1, 2, 3, &quot;), &quot;erreur&quot;);</span>
+<span class="nc" id="L59">		assertEquals(calc.ajoute(&quot;1, ,2&quot;), &quot;erreur&quot;);</span>
+<span class="nc" id="L60">		assertEquals(calc.ajoute(&quot;1, &quot;), &quot;erreur&quot;);</span>
+<span class="nc" id="L61">		assertEquals(calc.ajoute(&quot;,&quot;), &quot;erreur&quot;);</span>
+
+<span class="nc" id="L63">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span>CalculateurTest (1) (May 19, 2024 5:19:19 AM)</div></body></html>

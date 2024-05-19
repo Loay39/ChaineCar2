@@ -16,8 +16,6 @@ class CalculateurTest {
 	@Test
 	void test1() {
 		assertEquals(calc.ajoute("42"), "42");
-		// Regressée durant test8
-		// assertEquals(calc.ajoute(","), ",");
 	}
 
 	@Test
@@ -53,5 +51,14 @@ class CalculateurTest {
 		assertEquals(calc.ajoute("-666"), "erreur");
 		assertEquals(calc.ajoute("7,-5"), "erreur");
 		assertEquals(calc.ajoute("-1,-2,-3"), "erreur");
+	}
+
+	@Test
+	void test8() {
+		assertEquals(calc.ajoute("1, 2, 3, "), "erreur");
+		assertEquals(calc.ajoute("1, ,2"), "erreur");
+		assertEquals(calc.ajoute("1, "), "erreur");
+		assertEquals(calc.ajoute(","), "erreur");
+
 	}
 }
