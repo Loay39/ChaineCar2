@@ -36,4 +36,11 @@ class CalculateurTest {
 		assertEquals(calc.ajoute("-1,-2,-3"), "-6");
 	}
 
+	@Test
+	void test5() {
+		assertEquals(calc.ajoute("1,1000,2000,2"), "3");
+		assertEquals(calc.ajoute("1000,1,2000"), "1");
+		assertEquals(calc.ajoute("1000"), "0");
+	}
+
 }

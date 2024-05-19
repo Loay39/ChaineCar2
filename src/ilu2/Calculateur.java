@@ -6,7 +6,11 @@ public class Calculateur {
 		int somme = 0;
 		String[] tabChaineEntiers = input.split(",");
 		for (int i = 0; i < tabChaineEntiers.length; i++) {
-			somme += Integer.parseInt(tabChaineEntiers[i]);
+			int entier = Integer.parseInt(tabChaineEntiers[i]);
+			if (entier < 1000) {
+				somme += entier;
+			}
+
 		}
 		return somme;
 	}
