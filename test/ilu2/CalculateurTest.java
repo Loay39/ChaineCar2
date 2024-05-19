@@ -14,9 +14,14 @@ class CalculateurTest {
 	}
 
 	@Test
-	void testAjoute() {
+	void test1() {
 		assertEquals(calc.ajoute("42"), "42");
 		assertEquals(calc.ajoute(","), ",");
+	}
+
+	@Test
+	void test2() {
+		assertEquals(calc.ajoute(""), "0");
 	}
 
 }
